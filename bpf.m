@@ -1,11 +1,11 @@
 function [Dbpf,sp_bpf,f]=bpf(data,dt,N,cutoff)
-% band-pass frequency filter
-% data = input shot gathers
+% band-pass frequency filter 9BPF)
+% data = n x r input (e.g. shot gathers, time series signal). n = number of samples. r = number of recivers.
 % N = the BPF fir filter length
-% cut_off = vector equal to f_low and f_high cut-off values
+% cut_off = vector contains cut-off frequency values. For instance; '[5,37]' corresponds to low cut and high cut of 5 and 37 Hz.
 % Dbpf = BP filtered data
-% sp_bpf = BP filtered data spectra
-% f = a vector containing the frequency values
+% sp_bpf = BP filtered data frequency spectra
+% f = vector containing the frequency values
 
 [nt,nx] = size(data);
 nt_fft = 2*nt;
